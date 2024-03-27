@@ -40,8 +40,10 @@ const run = async () => {
         if (error.message.includes("400 Bad Request; Please wait a few minutes before you try again.")) {
             console.log("Try again in a few minutes");
         }
-        if (error.message.includes("400 Bad Request; challenge_required")) {
+        else if (error.message.includes("400 Bad Request; challenge_required")) {
             console.log("Manual reauthorization in app or web required")
+        } else {
+            console.error(error);
         }
     } finally {
         if (loggedIn) {

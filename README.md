@@ -8,7 +8,7 @@ Instagram unliking script!
 
 ## How To Run
 
-Replace `???` placeholders in `igun.ts`
+Replace `???` in `igun.ts`
 
 `npm i`
 
@@ -16,8 +16,9 @@ Replace `???` placeholders in `igun.ts`
 
 ## Info
 
-Instagram (API) limits the amount of commands (unlikes in this case) you can do within a certain timeframe. 
+Instagram (API) imposes restrictions on the number of commands, such as unlikes, that you can execute within a specific time frame.
 
-Usually you only need to reauthorize your account via the Instagram app or webpage to get going again. 
-
-Sometimes you are being timed out and have to wait for up to 10 minutes before being able to rerun the script again.
+Possible scenarios you may encounter:
+* Reauthorization of your account through the Instagram app or webpage
+* Encountering a timeout, necessitating a wait of up to 10 minutes before rerunning the script
+* Being fully logged out of your account, resulting in an inability to reauthorize for XX minutes
