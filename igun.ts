@@ -17,7 +17,7 @@ const fetchLikedItems = async (): Promise<LikedFeedResponseRootObject> => {
 const run = async () => {
     ig.state.generateDevice(crypto.randomUUID());
 
-    let res = {} as LikedFeedResponseRootObject;
+    let res;
     let loggedIn = false;
 
     try {
