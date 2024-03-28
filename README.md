@@ -18,7 +18,7 @@ Replace `???` in `igun.ts`
 
 Instagram (API) imposes restrictions on the number of commands, such as unlikes, that you can execute within a specific time frame.
 
-Possible scenarios you may encounter:
+Possible scenarios you may encounter, if you run the script too often:
 * Reauthorization of your account through the Instagram app or webpage
 * Encountering a timeout, necessitating a wait of up to 10 minutes before rerunning the script
-* Being fully logged out of your account, resulting in an inability to reauthorize for up to 24 hours. Not sure if it is carrier limitations or Meta's services. You could try authorizing with WhatsApp instead (only if you already have WhatsApp).
+* Being fully logged out of your account, resulting in an inability to reauthorize for up to 24 hours.

@@ -21,30 +21,19 @@ const run = async () => {
     let loggedIn = false;
 
     try {
-        console.log("Trying to log in..")
+        console.log("Logging in..")
         await ig.account.login(USERNAME, PASSWORD);
         loggedIn = true;
         console.log("OK")
 
         res = await fetchLikedItems();
 
-        while (res.more_available) {
-            for (const item of res.items) {
-                await ig.media.unlike({ mediaId: item.id, moduleInfo: { module_name: 'feed_contextual_newsfeed_multi_media_liked' }});
-                console.log("Unliked " + item.id);
-            }
-    
-            res = await fetchLikedItems();
+        for (const item of res.items) {
+            await ig.media.unlike({ mediaId: item.id, moduleInfo: { module_name: 'feed_contextual_newsfeed_multi_media_liked' }});
+            console.log("Unliked " + item.id);
         }
     } catch (error: any) {
-        if (error.message.includes("400 Bad Request; Please wait a few minutes before you try again.")) {
-            console.log("Try again in a few minutes");
-        }
-        else if (error.message.includes("400 Bad Request; challenge_required")) {
-            console.log("Manual reauthorization in app or web required")
-        } else {
-            console.error(error);
-        }
+        console.error(error);
     } finally {
         if (loggedIn) {
             console.log("Logging out and destroying session..");
